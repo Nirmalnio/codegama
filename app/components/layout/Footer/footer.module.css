@@ -1,0 +1,45 @@
+.footermainDiv{
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px 16px 40px;
+    box-shadow: 0 0px 6px 0px rgba(0,0,0,0.5);
+    min-height: 100px;
+}
+
+.footerLogo{
+    width: 200px;
+    height: auto;
+}
+
+.footerLeftDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.footerLeftDiv small{
+     margin-top: 30px;
+}
+
+.optionslist{
+    list-style: none;
+    display: flex;
+    align-items:center;
+}
+
+.optionslist li {
+    margin: 0px 15px;
+    font-size: 16px;
+}
+
+
+.termsDiv{
+    display: flex;
+    justify-content: end;
+}
+
+.termsDiv small {
+    margin-right: 14px;
+}

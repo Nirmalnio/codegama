@@ -1,0 +1,44 @@
+.headermain{
+    position: sticky;
+    top: 0;
+}
+.headermainDiv{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: rgb(240, 255, 251);
+    box-shadow: 0 0px 6px 0px rgba(0,0,0,0.5);
+}
+
+.HeaderLogo{
+    width: 160px;
+    height: auto;
+}
+
+.optionslist{
+    list-style: none;
+    display: flex;
+    align-items:center;
+}
+
+.optionslist li {
+    margin: 0px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cartitemnum{
+    position: absolute;
+    top: 8px;
+    right: 38px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(3, 169, 48);
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
