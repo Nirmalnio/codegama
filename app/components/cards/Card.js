@@ -1,11 +1,13 @@
 import React from "react";
 import style from "./card.module.css";
 import Image from "next/image";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "@/app/Global/cartSlice";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 function Card({ item }) {
+
+  const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -13,6 +15,9 @@ function Card({ item }) {
     dispatch(addItemToCart(item));
     router.push("/cart");
   };
+
+  // const added = cartItems?.filter(el=>item.includes(el))
+  const added = cartItems.some((ite) => ite?.id === item?.id);
   return (
     <div className={style.cardDiv}>
       <Link href={`product/${item?.id}`}>
@@ -31,9 +36,11 @@ function Card({ item }) {
       </Link>
 
       <b>$ {item?.price}</b>
-      <div className={style.addcart} onClick={handledata}>
+      {added?
+      <div className={style.addedcart}>Added</div>
+      :<div className={style.addcart} onClick={handledata}>
         Add cart
-      </div>
+      </div>}
     </div>
   );
 }

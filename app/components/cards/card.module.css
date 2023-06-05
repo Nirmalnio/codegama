@@ -40,6 +40,19 @@
     border-radius: 6px;
 }
 
+.addedcart{
+    background-color:  rgb(86, 86, 86);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    cursor: none;
+}
+
 .cardimg2{
     width: 160px;
     height: 160px;
@@ -73,18 +86,18 @@
     font-size: 16px;
 }
 
-.cartcrdrgt div b {
+.cartcrdrgt .btmsecDiv b {
     color: rgb(2, 155, 43);
     font-size: 22px;
 }
 
-.cartcrdrgt div {
+.cartcrdrgt .btmsecDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.cartcrdrgt div button {
+.cartcrdrgt .btmsecDiv .removebtn {
    background-color: brown;
    color: aliceblue;
    border: none;
@@ -94,3 +107,29 @@
    cursor: pointer;
  }
 
+.quantityDiv{
+    display: flex;
+    justify-content: right;
+}
+
+.quantityBtn{
+    display: flex;
+    align-items: center;
+}
+
+.quantityBtn button {
+    background-color: #007a78;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    color: white;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.quantityBtn .disabled {
+    background-color: rgb(110, 110, 110);
+    cursor: not-allowed;
+}

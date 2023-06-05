@@ -8,6 +8,12 @@ import { useSelector } from "react-redux";
 
 function Cart() {
   const cartItems = useSelector((state) => state.cart.items);
+  const totalAmount = useSelector(state => state.cart.totalAmount);
+
+  console.log(cartItems,"cartitems");
+
+ 
+
 
   return (
     <>
@@ -20,13 +26,30 @@ function Cart() {
             {cartItems?.length === 0 ? (
               <h2 className={style.noitemtxt}>NO Items in cart</h2>
             ) : (
-              cartItems?.map((item, i) => {
+             <div className={style.cartitemsDiv}>
+              <div className={style.leftSideDiv}>
+               {cartItems?.map((item, i) => {
                 return <CartCard item={item} i={i} />;
-              })
+              })}
+             </div>
+              <div className={style.totalDiv}>
+              <div className={style.totalCardMain}>
+               <h2>Payment Summary</h2>
+               {cartItems?.map((item, i) => {
+                 let title = item?.title.slice(0, 15)+"..."
+                 return (
+                  <span key={i}>{title}  - {item?.quantity} Qty </span>
+                 )})
+               }
+               <b>Total : $ {totalAmount}</b>
+               <button>Checkout</button>
+               </div>
+              </div>
+              </div>
             )}
           </div>
         </div>
-        <div className={style.totalDiv}></div>
+     
       </div>
       <Footer />
     </>
